@@ -20,5 +20,17 @@ namespace FizzBuzz_ConsoleApp
             return false;
 
         }
+
+        public bool IsBuzz(int i)
+        {
+            if (IsInRange(i))
+            {
+                return i % 5 == 0;
+            }
+
+            Console.WriteLine($"{i} is out of range!");
+            return false;
+
+        }
     }
 }

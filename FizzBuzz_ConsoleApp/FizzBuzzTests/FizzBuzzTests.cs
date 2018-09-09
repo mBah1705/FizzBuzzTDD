@@ -35,5 +35,12 @@ namespace FizzBuzzTests
             FizzBuzz Buzzer = new FizzBuzz();
             Assert.AreEqual(Buzzer.IsFizz(6), true);
         }
+
+        [TestMethod]
+        public void When_10_Should_ReturnBuzz()
+        {
+            FizzBuzz Buzzer = new FizzBuzz();
+            Assert.AreEqual(Buzzer.IsBuzz(10), true);
+        }
     }
 }
