@@ -6,14 +6,15 @@ namespace FizzBuzz_ConsoleApp
     {
         static void Main(string[] args)
         {
-            for(int i = 1; i <= 100; i++)
+            FizzBuzz buzzer = new FizzBuzz();
+
+            for (int i = 1; i <= 100; i++)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(buzzer.ReturnValue(i));
             }
 
-            FizzBuzz buzzer = new FizzBuzz();
             //Should print 120 is out of range;
-            buzzer.IsFizz(120);
+            Console.WriteLine(buzzer.ReturnValue(120));
             Console.ReadLine();
         }
     }

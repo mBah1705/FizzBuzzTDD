@@ -7,33 +7,36 @@ namespace FizzBuzz_ConsoleApp
         private int min = 1;
         private int max = 100;
 
+        private string value = string.Empty;
+
         public bool IsInRange(int i) => min <= i && i <= max;
 
-        public string IsFizz(int i)
+        public void IsFizz(int i)
         {
-            if (IsInRange(i))
-            {
-                return i % 3 == 0 ? "Fizz" : i.ToString();
-            }
-            return $"{i} is out of range!";
+            value += i % 3 == 0 ? "Fizz" : string.Empty;
         }
 
-        public string IsBuzz(int i)
+        public void IsBuzz(int i)
         {
-            if (IsInRange(i))
-            {
-                return i % 5 == 0 ? "Buzz" : i.ToString();
-            }
-            return $"{i} is out of range!";
+            value += i % 5 == 0 ? "Buzz" : string.Empty;
         }
 
-        public string IsFizzBuzz(int i)
+        public string ReturnValue(int v)
         {
-            if (IsInRange(i))
+            value = string.Empty;
+
+            if (IsInRange(v))
             {
-                return (i % 3 == 0 && i % 5 == 0) ? "FizzBuzz" : i.ToString();
+
+                IsFizz(v);
+                IsBuzz(v);
+                if (value == string.Empty)
+                {
+                    value = v.ToString();
+                }
+                return value;
             }
-            return $"{i} is out of range!";
+            return $"{v} is out of range!";
         }
     }
 }

@@ -19,14 +19,14 @@ namespace FizzBuzzTests
         public void When_0_Should_NotReturnFizz_BecauseOutOfRange()
         {
             FizzBuzz Buzzer = new FizzBuzz();
-            Assert.AreEqual(Buzzer.IsFizz(0), "0 is out of range!");
+            Assert.AreEqual(Buzzer.ReturnValue(0), "0 is out of range!");
         }
 
         [TestMethod]
-        public void When_1_Should_NotReturn_1()
+        public void When_1_Should_Return_1()
         {
             FizzBuzz Buzzer = new FizzBuzz();
-            Assert.AreEqual(Buzzer.IsFizz(1), "1");
+            Assert.AreEqual(Buzzer.ReturnValue(1), "1");
 
         }
 
@@ -34,31 +34,31 @@ namespace FizzBuzzTests
         public void When_6_Should_Return_Fizz()
         {
             FizzBuzz Buzzer = new FizzBuzz();
-            Assert.AreEqual(Buzzer.IsFizz(6), "Fizz");
+            Assert.AreEqual(Buzzer.ReturnValue(6), "Fizz");
         }
 
         [TestMethod]
         public void When_10_Should_Return_Buzz()
         {
             FizzBuzz Buzzer = new FizzBuzz();
-            Assert.AreEqual(Buzzer.IsBuzz(10), "Buzz");
+            Assert.AreEqual(Buzzer.ReturnValue(10), "Buzz");
         }
 
         [TestMethod]
-        public void When_15_Should_Return_FizzBuzz()
+        public void When_15_Should_Only_Return_FizzBuzz()
         {
             FizzBuzz Buzzer = new FizzBuzz();
-            Assert.AreEqual(Buzzer.IsFizzBuzz(15), "FizzBuzz");
+            Assert.AreEqual(Buzzer.ReturnValue(15), "FizzBuzz");
         }
 
         [TestMethod]
-        public void When_15_Should_Return_Fizz_Buzz_FizzBuzz()
+        public void When_15_Should_Not_Return_Only_Fizz_Or_Buzz()
         {
             FizzBuzz Buzzer = new FizzBuzz();
 
-            Assert.AreEqual(Buzzer.IsFizz(15), "Fizz");
-            Assert.AreEqual(Buzzer.IsBuzz(15), "Buzz");
-            Assert.AreEqual(Buzzer.IsFizzBuzz(15), "FizzBuzz");
+            Assert.AreNotEqual(Buzzer.ReturnValue(15), "Fizz");
+            Assert.AreNotEqual(Buzzer.ReturnValue(15), "Buzz");
+            Assert.AreEqual(Buzzer.ReturnValue(15), "FizzBuzz");
         }
     }
 }
