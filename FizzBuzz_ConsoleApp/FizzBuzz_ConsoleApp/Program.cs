@@ -11,6 +11,9 @@ namespace FizzBuzz_ConsoleApp
                 Console.WriteLine(i);
             }
 
+            FizzBuzz buzzer = new FizzBuzz();
+            //Should print 120 is out of range;
+            buzzer.IsFizz(120);
             Console.ReadLine();
         }
     }
