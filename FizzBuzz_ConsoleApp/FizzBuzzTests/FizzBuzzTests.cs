@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using FizzBuzz_ConsoleApp;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FizzBuzzTDD.Tests
+namespace FizzBuzzTests
 {
     [TestClass]
     public class FizzBuzzTests
